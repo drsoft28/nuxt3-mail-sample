@@ -54,9 +54,7 @@ let checkCount = computed(()=>list.value.filter(x=>x.selected).length);
 const selectItem = (id,selected)=>{
     const index = listSelected.value.findIndex((x)=>x==id);
     if(index>-1 && !selected){
-       
         listSelected.value.splice(index, 1);
-        //list.value[index].selected = selected;
     }
     if(index==-1 && selected){
        listSelected.value.push(id) 
@@ -69,12 +67,8 @@ const changeCheckAll =(newValue)=>{
     if(!newValue){
   listSelected.value = []
     }else{
-        console.log('sqsd',list.value.map(x=>x.id))
         listSelected.value = list.value.map(x=>x.id)
     }
-   /*list.value.forEach(element => {
-        if(listSelected.value.includes(element.id))
-    }); */
     
 }
 const markAsRead =()=>{

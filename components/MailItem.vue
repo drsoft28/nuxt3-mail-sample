@@ -20,7 +20,6 @@ watch(checkValue,  (newValue) => {
   emit('selected',props.item.id,newValue)
 })
 watch(() =>props.item,  (newValue) => {
-   // console.log('item',newValue,newValue.selected)
     checkValue.value = newValue.selected
 },
   { deep: true })
